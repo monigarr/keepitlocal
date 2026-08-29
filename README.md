@@ -38,6 +38,24 @@ It is to help you understand your choices.
 
 ---
 
+## Three Scales of Digital Independence
+
+Keep It Local can be applied at three interconnected scales:
+
+### Personal
+Can I access and control the information I depend on?
+
+### Organizational
+Can my business or community organization continue operating if an external service disappears?
+
+### Infrastructure
+What physical, electrical, network, water, computing, and supply-chain infrastructure does our region depend on—and what happens when those dependencies fail?
+
+The same principle applies at every scale:
+
+> Understand your dependencies. Keep what you can. Own what matters. Build alternatives.
+---
+
 ## Start With What Matters Most
 
 Consider the things you rely on every day:
