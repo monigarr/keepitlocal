@@ -35,6 +35,60 @@ An essay framing local-first, human-centered digital infrastructure.
 
 ---
 
+## How to Use This Repository
+
+Pick the path that matches what you are trying to do. For the full framework map, see the [System Architecture](./architecture/KEEP_IT_LOCAL_SYSTEM_ARCHITECTURE.md).
+
+### 1. You just want practical help (nontechnical)
+
+- **Start with this README** — it is written for nontechnical readers.
+- **Print the [Data Center Decision Checklist](./infrastructure/DATA_CENTER_CHECKLIST.md)** and work through it for your family, business, or community. It is the practical, single-decision-at-a-time entry point.
+
+### 2. You want to analyze one specific system
+
+Follow the [worked personal example](./examples/personal-photo-library.md) — a person-level example — or the [EO 14420/14421 case study](./research/EO_14420_14421/README.md) for a large infrastructure case:
+
+1. **Define the question** — what do you want to know about the system?
+2. **Read the method** — [methodology/RESEARCH_METHOD.md](./methodology/RESEARCH_METHOD.md) is the 13-step repeatable process. It works at any scale: personal, business, AI workload, community.
+3. **Classify claims as you go** — use the [Evidence Standard](./methodology/EVIDENCE_STANDARD.md) labels: **CONFIRMED / REPORTED / INFERRED / HYPOTHESIS / UNKNOWN**. Remember, *UNKNOWN is a valid result.*
+
+### 3. You want to model dependencies systematically
+
+1. Read the core model: [models/dependency-model.md](./models/dependency-model.md) — dimensions, types, criticality (LOW → CRITICAL), evidence discipline.
+2. Position things using the [Infrastructure Stack](./models/infrastructure-stack.md) (digital → physical layers).
+3. Ask failure/recovery questions with the [Resilience Model](./models/resilience-model.md).
+4. Ask control questions with the [Sovereignty Model](./models/sovereignty-model.md).
+5. Record what you find as data using the [Infrastructure Data Model](./models/infrastructure-data-model.md):
+   - [`models/infrastructure.json`](./models/infrastructure.json) and [`models/infrastructure.csv`](./models/infrastructure.csv) are working templates — copy them and adapt;
+   - the schemas in [`models/schemas/`](./models/schemas/infrastructure.schema.json) validate your data (draft-07 JSON Schema).
+
+### 4. You are a researcher doing a case study
+
+1. Start from the [System Architecture](./architecture/KEEP_IT_LOCAL_SYSTEM_ARCHITECTURE.md) to understand how the layers connect.
+2. Follow the EO case as the reference implementation: [research/EO_14420_14421/00_CASE_STUDY_INDEX.md](./research/EO_14420_14421/00_CASE_STUDY_INDEX.md) maps every framework component to how the case uses it.
+3. When you add your own research, apply the same six components (Evidence Standard + Dependency / Stack / Data / Resilience / Sovereignty models) and put results in `research/`. The framework stays in `models/` and `methodology/`, unchanged.
+
+### 5. You are a developer building tooling
+
+- **Validated, consistent machine input:** [`models/infrastructure.json`](./models/infrastructure.json) plus [`models/schemas/*.schema.json`](./models/schemas/infrastructure.schema.json) are your contract. Model instances are JSON documents that validate against `infrastructure.schema.json`.
+- **Enums you can rely on:** `criticality`, `evidenceClassification`, `dependencyType`, `layer`, and `status` are defined identically across every schema.
+- The `principles/ → methodology/ → models/ → infrastructure/ → applications → research` layout is deliberately structured so documentation can grow into datasets and CLI tooling.
+
+### Quick map
+
+| Need | Go to |
+| --- | --- |
+| Nontechnical start | [`README.md`](./README.md) |
+| Practical checklist | [`infrastructure/DATA_CENTER_CHECKLIST.md`](./infrastructure/DATA_CENTER_CHECKLIST.md) |
+| How the pieces fit | [`architecture/KEEP_IT_LOCAL_SYSTEM_ARCHITECTURE.md`](./architecture/KEEP_IT_LOCAL_SYSTEM_ARCHITECTURE.md) |
+| The repeatable process | [`methodology/RESEARCH_METHOD.md`](./methodology/RESEARCH_METHOD.md) |
+| What counts as true | [`methodology/EVIDENCE_STANDARD.md`](./methodology/EVIDENCE_STANDARD.md) |
+| The core model | [`models/dependency-model.md`](./models/dependency-model.md) |
+| Record findings as data | [`models/`](./models/infrastructure-data-model.md) (+ [`schemas/`](./models/schemas/infrastructure.schema.json)) |
+| Reference case study | [`research/EO_14420_14421/`](./research/EO_14420_14421/README.md) |
+
+---
+
 ## What Does "Keep It Local" Mean?
 
 It means asking a simple question:
