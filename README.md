@@ -191,3 +191,5 @@ Small choices can create greater resilience.
 The purpose is education—not fear.
 
 The goal is **more choice, more understanding, and more control.**
+
+Research disclaimer: Keep It Local is an independent community technology and infrastructure research project. The materials in this repository are intended to support public understanding, technical research, and informed discussion. They do not constitute legal, engineering, regulatory, cybersecurity, environmental, or financial advice. References to specific projects, organizations, jurisdictions, technologies, or potential risks should not be interpreted as findings of wrongdoing or security threats unless supported by authoritative evidence.
