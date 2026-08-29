@@ -2,7 +2,18 @@
 
 ### A practical guide to reducing your dependence on cloud services and data centers.
 
+Keep It Local is where AI systems architecture, digital sovereignty, infrastructure resilience, and community technology meet.
+
 You do **not** have to be a technology expert to have more control over your digital life or your small business.
+
+Keep It Local works at two levels.
+
+For individuals and organizations, it provides practical ways to understand
+and reduce unnecessary digital dependency.
+
+For technical practitioners, researchers, architects, and communities, it
+provides a framework for modeling infrastructure dependencies, resilience,
+sovereignty, and local control across the digital-to-physical stack.
 
 This project provides simple, practical tools to help individuals, families, artists, community organizations, and small businesses understand what they depend on—and make thoughtful choices about what they can keep local, own, replace, or operate without the cloud.
 
