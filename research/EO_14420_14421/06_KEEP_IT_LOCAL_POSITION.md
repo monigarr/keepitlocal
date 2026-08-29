@@ -1,5 +1,7 @@
 # Keep It Local — Critical Infrastructure Position
 
+> **Framework references:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Sovereign AI principle](../../principles/SOVEREIGN_AI.md) · [Sovereignty Model](../../models/sovereignty-model.md) · [Infrastructure Stack](../../models/infrastructure-stack.md).
+
 ## A community-scale infrastructure philosophy
 
 Keep It Local is not an argument against artificial intelligence.

@@ -2,6 +2,8 @@
 
 > **Research case study:** Critical infrastructure, AI/data-center growth, resilience, supply-chain security, and community infrastructure literacy.
 
+> **Framework component:** This folder is the **first formal case study** of the Keep It Local systems framework. It applies the [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md), [Dependency Model](../../models/dependency-model.md), [Infrastructure Stack](../../models/infrastructure-stack.md), [Infrastructure Data Model](../../models/infrastructure-data-model.md), [Resilience Model](../../models/resilience-model.md), and [Sovereignty Model](../../models/sovereignty-model.md) to a real infrastructure-policy question. Start at [`00_CASE_STUDY_INDEX.md`](00_CASE_STUDY_INDEX.md).
+
 This folder is a research case study examining how recent U.S. critical-infrastructure policy intersects with the rapid expansion of artificial intelligence and large-scale data-center infrastructure.
 
 It is **not an advocacy document** and does not make findings about the security of any particular facility, vendor, country, technology, or project.
@@ -127,7 +129,7 @@ This distinction is particularly important when discussing critical infrastructu
 
 ## Evidence Standard
 
-The companion `EVIDENCE_STANDARD.md` defines the evidence classifications used by Keep It Local.
+The repository's canonical evidence standard lives at [`methodology/EVIDENCE_STANDARD.md`](../../methodology/EVIDENCE_STANDARD.md). The local `EVIDENCE_STANDARD.md` is a pointer to it.
 
 The standard is intentionally conservative.
 

@@ -1,5 +1,7 @@
 # EO 14420 / 14421 Implementation Watchlist
 
+> **Framework reference:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Source Ranking](../../methodology/SOURCE_RANKING.md) · [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md). Rows in the evidence log are classified per the [Research Method](../../methodology/RESEARCH_METHOD.md).
+
 ## Why this exists
 
 The August 26, 2026 Executive Order establishes a framework whose practical effect will depend heavily on subsequent federal implementation.

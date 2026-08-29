@@ -21,13 +21,17 @@ This project provides simple, practical tools to help individuals, families, art
 
 ## Start Here
 
-### [Download the Keep It Local Checklist](./Keep-It-Local-Checklist.pdf)
+### [Data Center Decision Checklist](./infrastructure/DATA_CENTER_CHECKLIST.md)
 
 Print it. Share it. Use it with your family, business, organization, or community.
 
 You do not have to change everything at once.
 
 The goal is to **reduce unnecessary dependence one decision at a time.**
+
+### [Data Center Freedom (PDF)](./docs/Data-Center-Freedom.pdf)
+
+An essay framing local-first, human-centered digital infrastructure.
 
 ---
 
@@ -59,12 +63,39 @@ Can I access and control the information I depend on?
 ### Organizational
 Can my business or community organization continue operating if an external service disappears?
 
-### Infrastructure
+### Community
 What physical, electrical, network, water, computing, and supply-chain infrastructure does our region depend on—and what happens when those dependencies fail?
 
 The same principle applies at every scale:
 
 > Understand your dependencies. Keep what you can. Own what matters. Build alternatives.
+---
+
+## The Keep It Local Framework
+
+Keep It Local uses a systems approach:
+
+**Principles → Methodology → Models → Infrastructure → Applications → Research**
+
+The framework can be applied to a personal digital system, a small
+business, an AI workload, or community-scale infrastructure.
+
+The question remains the same:
+
+> What does this system depend on, who controls those dependencies,
+> what happens when they fail, and what alternatives exist?
+
+### The framework parts
+
+- **[Architecture](./architecture/KEEP_IT_LOCAL_SYSTEM_ARCHITECTURE.md)** — how the whole system fits together.
+- **[Principles](./principles/LOCAL_FIRST.md)** — what matters: local control, data sovereignty, community resilience, sovereign AI.
+- **[Methodology](./methodology/EVIDENCE_STANDARD.md)** — how we know: the Evidence Standard, the Research Method, and Source Ranking.
+- **[Models](./models/dependency-model.md)** — how systems are represented: the Dependency Model, Infrastructure Stack, Resilience Model, and Sovereignty Model.
+- **[Infrastructure](./infrastructure/CRITICAL_INFRASTRUCTURE.md)** — practical tools for digital, physical, and energy systems.
+- **[Community Infrastructure](./community-infrastructure/README.md)** — applying the framework at community scale.
+- **[Examples](./examples/README.md)** — worked applications of the framework to real systems.
+- **[Research](./research/EO_14420_14421/README.md)** — the first formal case study: bulk-power security, AI infrastructure, and the Akwesasne/Massena context.
+
 ---
 
 ## Start With What Matters Most
@@ -122,6 +153,8 @@ Examples include:
 * Keeping copies of your creative work outside a single platform
 * Using software that allows you to export your information
 * Maintaining important information that remains accessible when the internet is unavailable
+
+See the worked example: [A Personal Photo Library](./examples/personal-photo-library.md).
 
 ---
 

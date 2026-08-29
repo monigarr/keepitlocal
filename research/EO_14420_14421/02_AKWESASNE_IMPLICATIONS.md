@@ -1,5 +1,7 @@
 # Akwesasne Implications
 
+> **Framework references:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Sovereignty Model](../../models/sovereignty-model.md) · [Resilience Model](../../models/resilience-model.md) · [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md). Jurisdictional statements distinguish whose position is documented.
+
 ## Executive summary
 
 The August 26, 2026 U.S. bulk-power-system emergency does **not** give the Mohawk Council of Akwesasne new jurisdiction over the proposed Massena data-center development.

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./asset.schema.json",
+  "title": "Keep It Local — Asset",
+  "description": "A physical or digital item that provides or stores capability: hardware, software, model, dataset, facility, or facility component. See models/infrastructure-data-model.md.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "hardware",
+        "software",
+        "model",
+        "dataset",
+        "facility",
+        "facility-component",
+        "other"
+      ],
+      "description": "What kind of thing the asset is."
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "knowledge-data",
+        "software-models",
+        "applications",
+        "compute",
+        "storage",
+        "networking",
+        "facility",
+        "cooling-water",
+        "power",
+        "transmission",
+        "generation",
+        "supply-chain",
+        "governance"
+      ],
+      "description": "Position in the Infrastructure Stack (models/infrastructure-stack.md)."
+    },
+    "ownedBy": {
+      "type": "string",
+      "description": "Organization id (see infrastructure.schema.json) that owns the asset."
+    },
+    "operatedBy": {
+      "type": "string",
+      "description": "Organization id that operates the asset."
+    },
+    "locatedAt": {
+      "type": "string",
+      "description": "Location id (see infrastructure.schema.json) where the asset is physically located."
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-text description of the asset and its purpose."
+    },
+    "evidenceId": {
+      "type": "string",
+      "description": "Evidence id (see evidence.schema.json) supporting this record."
+    }
+  },
+  "additionalProperties": true
+}

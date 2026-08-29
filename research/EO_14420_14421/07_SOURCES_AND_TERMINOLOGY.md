@@ -1,5 +1,7 @@
 # Sources, Terminology & Research Notes
 
+> **Framework reference:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Source Ranking](../../methodology/SOURCE_RANKING.md) · [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md). Evidence labels below follow the canonical standard.
+
 ## Primary sources
 
 ### U.S. Executive Order / Presidential Action

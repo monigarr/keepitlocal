@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./evidence.schema.json",
+  "title": "Keep It Local — Evidence",
+  "description": "A source supporting a record, with its classification. Classifications follow methodology/EVIDENCE_STANDARD.md.",
+  "type": "object",
+  "required": ["id", "source", "classification"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier."
+    },
+    "source": {
+      "type": "string",
+      "description": "The source that supports the claim (document, record, link, statement)."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Associated date of the source (ISO 8601)."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link to the source where available."
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED",
+        "REPORTED",
+        "INFERRED",
+        "HYPOTHESIS",
+        "UNKNOWN"
+      ],
+      "description": "Evidence classification per methodology/EVIDENCE_STANDARD.md."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["LOW", "MODERATE", "HIGH"],
+      "description": "Confidence in the record given the source."
+    },
+    "scope": {
+      "type": "string",
+      "description": "What the evidence establishes."
+    },
+    "limitations": {
+      "type": "string",
+      "description": "What the evidence does not establish."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes, including open questions."
+    }
+  },
+  "additionalProperties": true
+}

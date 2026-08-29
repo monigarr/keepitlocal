@@ -2,6 +2,8 @@
 
 **Goal:** Reduce dependence on hyperscale and cloud data centers while preserving capability, reliability, security, privacy, and economic viability.
 
+> **Framework component:** practical infrastructure tooling. Applies the [Dependency Model](../models/dependency-model.md) and [Resilience Model](../models/resilience-model.md). Evidence classifications follow the [Evidence Standard](../methodology/EVIDENCE_STANDARD.md).
+
 This checklist is designed to help individuals, families, artists, community organizations, and small businesses understand their digital dependencies and make informed decisions about what they can keep local, own, replace, or operate without the cloud.
 
 ---

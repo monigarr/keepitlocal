@@ -1,5 +1,7 @@
 # Executive Order 14420 / 14421 — Technical Analysis
 
+> **Framework references:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Infrastructure Stack](../../models/infrastructure-stack.md) · [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md). Classifications below follow the Evidence Standard.
+
 > **Document-number note:** The White House page supplied for this project identifies the action as **Executive Order 14420**. Public references may also identify the same August 26, 2026 action as **Executive Order 14421**. Until the discrepancy is resolved in the official publication record, this repository uses `EO_14420_14421` as the folder name and avoids relying on the number alone.
 
 ## 1. What the order does

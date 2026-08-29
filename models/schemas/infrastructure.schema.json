@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./infrastructure.schema.json",
+  "title": "Keep It Local — Infrastructure Model",
+  "description": "Container for an infrastructure model instance: organizations, locations, assets, services, dependencies, failure modes, recovery options, and evidence. See models/infrastructure-data-model.md.",
+  "type": "object",
+  "required": ["frameworkVersion"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Location of this schema."
+    },
+    "frameworkVersion": {
+      "type": "string",
+      "description": "Keep It Local framework version used for this model instance."
+    },
+    "generated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the model instance was generated (ISO 8601)."
+    },
+    "organizations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "individual",
+              "small-business",
+              "organization",
+              "community",
+              "indigenous-government",
+              "government",
+              "commercial",
+              "utility",
+              "other"
+            ]
+          },
+          "jurisdiction": { "type": "string" }
+        }
+      },
+      "description": "Organizations that own, operate, govern, or supply things in the model."
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "country": { "type": "string" },
+          "region": { "type": "string" }
+        }
+      },
+      "description": "Geographic locations referenced by assets and dependencies."
+    },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "./asset.schema.json" },
+      "description": "Physical or digital items providing or storing capability."
+    },
+    "services": {
+      "type": "array",
+      "items": { "$ref": "./service.schema.json" },
+      "description": "Delivered capabilities that systems depend on."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "$ref": "./dependency.schema.json" },
+      "description": "Directed dependency relationships (models/dependency-model.md)."
+    },
+    "failureModes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "appliesTo", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "appliesTo": { "type": "string" },
+          "name": { "type": "string" },
+          "consequence": { "type": "string" }
+        }
+      },
+      "description": "Failure scenarios for assets and services (models/resilience-model.md)."
+    },
+    "recoveryOptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "forFailureMode", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "forFailureMode": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "description": "Recovery, substitution, and continuity options for failure modes."
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "./evidence.schema.json" },
+      "description": "Sources supporting the records in this model instance."
+    }
+  },
+  "additionalProperties": true
+}

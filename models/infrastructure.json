@@ -1,0 +1,263 @@
+{
+  "$schema": "./schemas/infrastructure.schema.json",
+  "frameworkVersion": "1.0",
+  "generated": "2026-08-28",
+  "organizations": [
+    {
+      "id": "org-studio",
+      "name": "Mono Studio",
+      "kind": "small-business",
+      "jurisdiction": "UNKNOWN"
+    },
+    {
+      "id": "org-cloud-vendor",
+      "name": "Cloud file-sync vendor",
+      "kind": "commercial",
+      "jurisdiction": "UNKNOWN"
+    },
+    {
+      "id": "org-isp",
+      "name": "Local internet service provider",
+      "kind": "utility",
+      "jurisdiction": "UNKNOWN"
+    },
+    {
+      "id": "org-utility",
+      "name": "Local electric utility",
+      "kind": "utility",
+      "jurisdiction": "UNKNOWN"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-studio-office",
+      "name": "Studio office",
+      "country": "UNKNOWN",
+      "region": "UNKNOWN"
+    },
+    {
+      "id": "loc-vendor-region",
+      "name": "Vendor-documented data center region",
+      "country": "UNKNOWN",
+      "region": "REPORTED"
+    },
+    {
+      "id": "loc-local-area",
+      "name": "Service area",
+      "country": "UNKNOWN",
+      "region": "UNKNOWN"
+    }
+  ],
+  "assets": [
+    {
+      "id": "as-local-nas",
+      "name": "Local NAS",
+      "kind": "hardware",
+      "layer": "storage",
+      "ownedBy": "org-studio",
+      "operatedBy": "org-studio",
+      "locatedAt": "loc-studio-office",
+      "description": "On-premises file storage for working files."
+    },
+    {
+      "id": "as-ups",
+      "name": "UPS unit",
+      "kind": "hardware",
+      "layer": "power",
+      "ownedBy": "org-studio",
+      "operatedBy": "org-studio",
+      "locatedAt": "loc-studio-office",
+      "description": "Uninterruptible power supply for the NAS."
+    }
+  ],
+  "services": [
+    {
+      "id": "sv-cloud-sync",
+      "name": "Cloud file-sync service",
+      "kind": "saas",
+      "layer": "storage",
+      "operatedBy": "org-cloud-vendor",
+      "description": "Synchronizes and hosts studio files."
+    },
+    {
+      "id": "sv-internet",
+      "name": "Internet connection",
+      "kind": "connectivity",
+      "layer": "networking",
+      "operatedBy": "org-isp",
+      "description": "Provides internet connectivity to the studio."
+    },
+    {
+      "id": "sv-power",
+      "name": "Electric power supply",
+      "kind": "utility",
+      "layer": "power",
+      "operatedBy": "org-utility",
+      "description": "Supplies electricity to the studio."
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "dep-cloud-sync",
+      "source": "Mini studio file library",
+      "dependency": "sv-cloud-sync",
+      "dependencyType": "service",
+      "criticality": "HIGH",
+      "purpose": "Synchronization and remote access to studio files.",
+      "dataInvolved": "Studio documents and working files.",
+      "layer": "storage",
+      "upstreamDependencies": "storage, network, energy",
+      "downstreamDependencies": "studio file workflows",
+      "replaceability": "Yes, an alternative sync service",
+      "portability": "Yes, via export and open formats",
+      "exportability": "Yes, if source copies are maintained",
+      "localAlternative": "as-local-nas",
+      "evidenceId": "ev-vendor-docs",
+      "confidence": "MODERATE",
+      "status": "PARTIALLY VERIFIED"
+    },
+    {
+      "id": "dep-local-nas",
+      "source": "Mini studio file library",
+      "dependency": "as-local-nas",
+      "dependencyType": "storage",
+      "criticality": "CRITICAL",
+      "purpose": "Local storage of working files.",
+      "dataInvolved": "Studio documents and working files.",
+      "layer": "storage",
+      "upstreamDependencies": "power",
+      "downstreamDependencies": "studio file workflows",
+      "replaceability": "Yes, another NAS or local disk",
+      "portability": "Yes",
+      "exportability": "Yes",
+      "localAlternative": "Second local backup",
+      "evidenceId": "ev-owned",
+      "confidence": "HIGH",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "dep-internet",
+      "source": "Mini studio file library",
+      "dependency": "sv-internet",
+      "dependencyType": "network",
+      "criticality": "HIGH",
+      "purpose": "Connectivity for cloud sync and external communication.",
+      "dataInvolved": "Synchronized file traffic.",
+      "layer": "networking",
+      "upstreamDependencies": "telecom infrastructure, energy",
+      "downstreamDependencies": "cloud sync",
+      "replaceability": "Second connection or offline working",
+      "portability": "Limited",
+      "exportability": "n/a",
+      "localAlternative": "Offline access to working files",
+      "evidenceId": "ev-contract",
+      "confidence": "HIGH",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "dep-power",
+      "source": "Mini studio file library",
+      "dependency": "sv-power",
+      "dependencyType": "energy",
+      "criticality": "CRITICAL",
+      "purpose": "Electricity for NAS, UPS, and studio equipment.",
+      "dataInvolved": "None",
+      "layer": "power",
+      "upstreamDependencies": "transmission, generation, supply chain",
+      "downstreamDependencies": "as-local-nas, studio equipment",
+      "replaceability": "Generator where practical",
+      "portability": "n/a",
+      "exportability": "n/a",
+      "localAlternative": "as-ups, generator",
+      "evidenceId": "ev-grid-docs",
+      "confidence": "LOW",
+      "status": "OPEN"
+    }
+  ],
+  "failureModes": [
+    {
+      "id": "fm-sync-shutdown",
+      "appliesTo": "sv-cloud-sync",
+      "name": "Service shutdown or account suspension",
+      "consequence": "Remote access to files lost; local copies unaffected if maintained. (REPORTED scenario)"
+    },
+    {
+      "id": "fm-nas-disk",
+      "appliesTo": "as-local-nas",
+      "name": "Disk failure",
+      "consequence": "Local working files at risk if no independent backup."
+    },
+    {
+      "id": "fm-internet-outage",
+      "appliesTo": "sv-internet",
+      "name": "Connectivity outage",
+      "consequence": "Cloud sync unavailable; offline access to local files still possible."
+    },
+    {
+      "id": "fm-power-outage",
+      "appliesTo": "sv-power",
+      "name": "Power outage",
+      "consequence": "NAS and studio equipment stop after UPS runtime."
+    }
+  ],
+  "recoveryOptions": [
+    {
+      "id": "ro-local-copy",
+      "forFailureMode": "fm-sync-shutdown",
+      "name": "Maintain local copy",
+      "description": "Keep a local copy of all files independent of the cloud service."
+    },
+    {
+      "id": "ro-second-backup",
+      "forFailureMode": "fm-nas-disk",
+      "name": "Independent second backup",
+      "description": "Maintain a backup on a different device or medium."
+    },
+    {
+      "id": "ro-offline-access",
+      "forFailureMode": "fm-internet-outage",
+      "name": "Offline access",
+      "description": "Access local working files without connectivity."
+    },
+    {
+      "id": "ro-ups-generator",
+      "forFailureMode": "fm-power-outage",
+      "name": "UPS and local generation",
+      "description": "Bridge and resume power after outage (as-ups, optional generator)."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-vendor-docs",
+      "source": "Cloud vendor service documentation",
+      "date": "2026-08-28",
+      "classification": "REPORTED",
+      "confidence": "MODERATE",
+      "notes": "Vendor describes regional hosting; independent confirmation not yet located."
+    },
+    {
+      "id": "ev-owned",
+      "source": "Ownership record (studio equipment inventory)",
+      "date": "2026-08-28",
+      "classification": "CONFIRMED",
+      "confidence": "HIGH",
+      "notes": "Studio owns and operates the NAS and UPS."
+    },
+    {
+      "id": "ev-contract",
+      "source": "ISP service agreement",
+      "date": "2026-08-28",
+      "classification": "CONFIRMED",
+      "confidence": "HIGH",
+      "notes": "Service agreement establishes connectivity terms."
+    },
+    {
+      "id": "ev-grid-docs",
+      "source": "Utility service documentation / local grid information",
+      "date": "2026-08-28",
+      "classification": "INFERRED",
+      "confidence": "LOW",
+      "notes": "Power dependency inferred from facility documentation; specific grid details not yet located."
+    }
+  ]
+}

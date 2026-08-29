@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./service.schema.json",
+  "title": "Keep It Local — Service",
+  "description": "A delivered capability that a system depends on (a SaaS, API, connectivity, utility, or platform). See models/infrastructure-data-model.md.",
+  "type": "object",
+  "required": ["id", "name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "saas",
+        "iaas",
+        "paas",
+        "api",
+        "connectivity",
+        "utility",
+        "platform",
+        "other"
+      ],
+      "description": "Delivered-capability category."
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "knowledge-data",
+        "software-models",
+        "applications",
+        "compute",
+        "storage",
+        "networking",
+        "facility",
+        "cooling-water",
+        "power",
+        "transmission",
+        "generation",
+        "supply-chain",
+        "governance"
+      ],
+      "description": "Position in the Infrastructure Stack (models/infrastructure-stack.md)."
+    },
+    "operatedBy": {
+      "type": "string",
+      "description": "Organization id that operates the service."
+    },
+    "ownedBy": {
+      "type": "string",
+      "description": "Organization id that owns the service."
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-text description of the service."
+    },
+    "evidenceId": {
+      "type": "string",
+      "description": "Evidence id (see evidence.schema.json) supporting this record."
+    }
+  },
+  "additionalProperties": true
+}

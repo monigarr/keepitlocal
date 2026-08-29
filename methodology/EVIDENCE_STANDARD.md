@@ -121,7 +121,7 @@ This is an important research result.
 
 ## Source Hierarchy
 
-When multiple sources are available, prefer evidence in approximately this order:
+When multiple sources are available, prefer evidence in approximately this order. The full canonical ranking with usage guidance lives in [SOURCE_RANKING.md](SOURCE_RANKING.md).
 
 ### 1. Law, regulation, and official government records
 

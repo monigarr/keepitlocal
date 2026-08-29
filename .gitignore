@@ -1,0 +1,7 @@
+# Internal build specification — keep out of the public repository.
+PRD.md
+
+# Operating-system junk files.
+.DS_Store
+Thumbs.db
+Desktop.ini

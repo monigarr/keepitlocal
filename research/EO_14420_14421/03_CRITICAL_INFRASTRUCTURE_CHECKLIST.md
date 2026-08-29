@@ -1,5 +1,7 @@
 # AI / Data-Center Critical Infrastructure Checklist
 
+> **Framework reference:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Dependency Model](../../models/dependency-model.md) · [Infrastructure Stack](../../models/infrastructure-stack.md) · [Resilience Model](../../models/resilience-model.md). Answers are classified per the [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md).
+
 ## Purpose
 
 Use this checklist when evaluating a large AI, hyperscale, or other high-load digital facility.
@@ -144,3 +146,5 @@ Classify every answer as:
 **UNKNOWN** — information has not been located.
 
 Do not turn UNKNOWN into INFERRED, and do not turn INFERRED into FACT.
+
+These classifications are defined canonically in the [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md).

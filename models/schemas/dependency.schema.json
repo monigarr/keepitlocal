@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "./dependency.schema.json",
+  "title": "Keep It Local — Dependency",
+  "description": "A relationship in which the operation, availability, integrity, recovery, or continuity of one system depends upon another asset, service, organization, infrastructure component, resource, or external condition. See models/dependency-model.md.",
+  "type": "object",
+  "required": ["id", "source", "dependency", "dependencyType", "criticality"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable identifier."
+    },
+    "source": {
+      "type": "string",
+      "description": "The dependent system (entity, asset, or service)."
+    },
+    "dependency": {
+      "type": "string",
+      "description": "The id or name of what is depended upon (asset or service)."
+    },
+    "dependencyType": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "service",
+            "software",
+            "hardware",
+            "compute",
+            "storage",
+            "network",
+            "energy",
+            "water",
+            "cooling",
+            "data",
+            "model",
+            "identity",
+            "authentication",
+            "payment",
+            "communications",
+            "human-expertise",
+            "supplier",
+            "geographic",
+            "regulatory",
+            "governance",
+            "supply-chain"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "service",
+              "software",
+              "hardware",
+              "compute",
+              "storage",
+              "network",
+              "energy",
+              "water",
+              "cooling",
+              "data",
+              "model",
+              "identity",
+              "authentication",
+              "payment",
+              "communications",
+              "human-expertise",
+              "supplier",
+              "geographic",
+              "regulatory",
+              "governance",
+              "supply-chain"
+            ]
+          }
+        }
+      ],
+      "description": "Dependency category or categories (see models/dependency-model.md §3)."
+    },
+    "criticality": {
+      "type": "string",
+      "enum": ["LOW", "MODERATE", "HIGH", "CRITICAL"],
+      "description": "Framework classification of how essential the dependency is (models/dependency-model.md §5). Not a regulatory designation."
+    },
+    "owner": {
+      "type": "string",
+      "description": "Who owns the dependency."
+    },
+    "operator": {
+      "type": "string",
+      "description": "Who operates the dependency."
+    },
+    "location": {
+      "type": "string",
+      "description": "Geographic location of the dependency."
+    },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Jurisdiction governing the dependency."
+    },
+    "purpose": {
+      "type": "string",
+      "description": "What the dependency provides."
+    },
+    "dataInvolved": {
+      "type": "string",
+      "description": "Data that flows through or resides in the dependency."
+    },
+    "upstreamDependencies": {
+      "type": "string",
+      "description": "What the dependency itself depends on."
+    },
+    "downstreamDependencies": {
+      "type": "string",
+      "description": "What depends on this dependency downstream."
+    },
+    "physicalInfrastructure": {
+      "type": "string",
+      "description": "Physical infrastructure required by the dependency."
+    },
+    "software": {
+      "type": "string",
+      "description": "Software involved in the dependency."
+    },
+    "network": {
+      "type": "string",
+      "description": "Network involved in the dependency."
+    },
+    "energy": {
+      "type": "string",
+      "description": "Energy infrastructure required by the dependency."
+    },
+    "waterCooling": {
+      "type": "string",
+      "description": "Water or cooling required by the dependency."
+    },
+    "supplyChain": {
+      "type": "string",
+      "description": "Supply chain supporting the dependency."
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "knowledge-data",
+        "software-models",
+        "applications",
+        "compute",
+        "storage",
+        "networking",
+        "facility",
+        "cooling-water",
+        "power",
+        "transmission",
+        "generation",
+        "supply-chain",
+        "governance"
+      ],
+      "description": "Infrastructure Stack layer where the dependency primarily sits."
+    },
+    "failureModes": {
+      "type": "string",
+      "description": "How the dependency can fail and what happens when it fails."
+    },
+    "recoveryRequirements": {
+      "type": "string",
+      "description": "What is needed to recover from failure."
+    },
+    "recoveryOptions": {
+      "type": "string",
+      "description": "Recovery paths that exist."
+    },
+    "replaceability": {
+      "type": "string",
+      "description": "Whether the dependency can be replaced, and with what."
+    },
+    "portability": {
+      "type": "string",
+      "description": "Whether the function can move to another provider or location."
+    },
+    "exportability": {
+      "type": "string",
+      "description": "Whether the data or capability can be exported."
+    },
+    "localAlternatives": {
+      "type": "string",
+      "description": "Local alternatives that exist."
+    },
+    "evidenceId": {
+      "type": "string",
+      "description": "Evidence id (see evidence.schema.json) supporting this record."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["LOW", "MODERATE", "HIGH"],
+      "description": "Confidence in the record."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "OPEN",
+        "VERIFIED",
+        "PARTIALLY VERIFIED",
+        "UNRESOLVED",
+        "CLOSED"
+      ],
+      "description": "Research status per methodology/EVIDENCE_STANDARD.md."
+    },
+    "unknowns": {
+      "type": "string",
+      "description": "What remains unknown about the dependency."
+    }
+  },
+  "additionalProperties": true
+}

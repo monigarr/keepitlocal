@@ -1,5 +1,7 @@
 # Massena AI Infrastructure Research Framework
 
+> **Framework references:** [Case-study index](00_CASE_STUDY_INDEX.md) · [Research Method](../../methodology/RESEARCH_METHOD.md) · [Dependency Model](../../models/dependency-model.md) · [Infrastructure Data Model](../../models/infrastructure-data-model.md). Evidence is classified per the [Evidence Standard](../../methodology/EVIDENCE_STANDARD.md).
+
 ## Purpose
 
 This document provides a neutral technical framework for researching proposed large-scale data-center development in Massena and its potential relationship to Akwesasne.
