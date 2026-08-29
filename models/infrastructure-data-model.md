@@ -146,7 +146,7 @@ Records reference each other by `id` and reference evidence by `evidenceId`.
 
 ## 5. CSV representation
 
-`infrastructure.csv` is a dependency-centric view: **one row per dependency**, with columns exported from the Dependency Model. A single flat file is easier for nontechnical users to read, edit, and use in spreadsheets. It is a projection of the richer JSON model, not a competing model. The CSV `type` column corresponds to the JSON `dependencyType` field.
+`infrastructure.csv` is a dependency-centric view: **one row per dependency**, with columns exported from the Dependency Model. A single flat file is easier for nontechnical users to read, edit, and use in spreadsheets. It is a projection of the richer JSON model, not a competing model. The CSV `type` column corresponds to the JSON `dependencyType` field, and the CSV `evidenceClassification` column corresponds to the JSON `classification` field on each evidence record.
 
 Columns:
 

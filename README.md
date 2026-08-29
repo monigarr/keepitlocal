@@ -71,7 +71,7 @@ Follow the [worked personal example](./examples/personal-photo-library.md) — a
 ### 5. You are a developer building tooling
 
 - **Validated, consistent machine input:** [`models/infrastructure.json`](./models/infrastructure.json) plus [`models/schemas/*.schema.json`](./models/schemas/infrastructure.schema.json) are your contract. Model instances are JSON documents that validate against `infrastructure.schema.json`.
-- **Enums you can rely on:** `criticality`, `evidenceClassification`, `dependencyType`, `layer`, and `status` are defined identically across every schema.
+- **Enum values you can rely on:** dependency types (service, software, energy, ...), stack layers, `criticality` (LOW / MODERATE / HIGH / CRITICAL), evidence classification (CONFIRMED / REPORTED / INFERRED / HYPOTHESIS / UNKNOWN), and research `status` are defined consistently across the schemas.
 - The `principles/ → methodology/ → models/ → infrastructure/ → applications → research` layout is deliberately structured so documentation can grow into datasets and CLI tooling.
 
 ### Quick map

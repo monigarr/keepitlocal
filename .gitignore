@@ -5,3 +5,6 @@ PRD.md
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Editor
+.vscode/
