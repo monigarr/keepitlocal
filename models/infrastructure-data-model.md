@@ -124,6 +124,7 @@ A way to recover, substitute, or continue operating after a failure mode. Recove
 {
   "$schema": "./schemas/infrastructure.schema.json",
   "frameworkVersion": "1.0",
+  "generated": "YYYY-MM-DD",
   "organizations": [ ... ],
   "locations": [ ... ],
   "assets": [ ... ],
@@ -135,11 +136,17 @@ A way to recover, substitute, or continue operating after a failure mode. Recove
 }
 ```
 
+The three top-level metadata fields are:
+
+- `$schema` — where the validating schema lives;
+- `frameworkVersion` — which Keep It Local framework version this model instance uses;
+- `generated` — when the instance was created.
+
 Records reference each other by `id` and reference evidence by `evidenceId`.
 
 ## 5. CSV representation
 
-`infrastructure.csv` is a dependency-centric view: **one row per dependency**, with columns exported from the Dependency Model. A single flat file is easier for nontechnical users to read, edit, and use in spreadsheets. It is a projection of the richer JSON model, not a competing model.
+`infrastructure.csv` is a dependency-centric view: **one row per dependency**, with columns exported from the Dependency Model. A single flat file is easier for nontechnical users to read, edit, and use in spreadsheets. It is a projection of the richer JSON model, not a competing model. The CSV `type` column corresponds to the JSON `dependencyType` field.
 
 Columns:
 

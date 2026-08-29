@@ -145,6 +145,10 @@ The purpose of this research is to make those distinctions visible.
 
 ## Documents in This Folder
 
+### `00_CASE_STUDY_INDEX.md`
+
+The case-study index. Maps every framework component (Evidence Standard, Dependency Model, Infrastructure Stack, Infrastructure Data Model, Resilience Model, Sovereignty Model) to how this case study uses it. Start here.
+
 ### `01_EXECUTIVE_ORDER_ANALYSIS.md`
 
 Technical reading of the August 26, 2026 presidential action, including its stated purpose, scope, covered infrastructure, implementation mechanisms, and limitations.

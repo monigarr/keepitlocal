@@ -139,9 +139,12 @@ keepitlocal/
 ├── infrastructure/            # Practical tools for digital/physical/energy systems
 ├── community-infrastructure/  # Reusable application domain for communities
 ├── examples/                  # Worked applications of the framework
+├── docs/                      # Existing artifacts (e.g., PDFs)
 └── research/
     └── EO_14420_14421/        # First formal case study
 ```
+
+> Note: `PRD.md` (the internal build specification) is kept locally and excluded from the public repository (see `.gitignore`).
 
 ## 6. Versioning
 
